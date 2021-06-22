@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  
+html, body {
+    margin: 0;
+    height: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    background-color:rgb(218,223,217);
+    color: rgb(8,11,23);
+    line-height: 1.75rem;
+}
+
+body.dark {
+    background-color: rgb(8,11,23);
+    color:rgb(218,223,217);
+}
+
+
+body > .navbar {
+    background-color: rgba(223,168,55,255);
+    color: rgba(250,16,35,255);
+    box-shadow: 0px 0px 10px rgba(245,242,248,255);
+    min-height: 5%;
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    text-transform: uppercase;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; 
+    top: 0;  
+    z-index: 9999;
+}
+
+body > .navbar ul {
+    display: flex;
+    justify-content: space-between;
+    min-width: 10%;
+    list-style-type: none;
+}
+
+body > .navbar ul h1 {
+    padding-right: 1rem;
+}
+
+body > .navbar ul a {
+    display: inline-block;
+    justify-content: space-around;
+    padding: 0 1rem;
+}
+
+
+a {
+    color: rgba(179,251,229,255);
+    text-decoration: none;
+}
+
+div[class="container main"] {
+    width: 80%;
+    margin: 5rem auto 0;
+}
