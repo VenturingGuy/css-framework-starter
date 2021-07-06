@@ -1,5 +1,51 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
 
+$border-circle: 50%;
+
+$checkmark: '✔';
+
+$color-background: #dadfd9;
+$color-foreground: #091d2c;
+$color-dark: #080b17;
+$color-md-light: #9cbfd8;
+$color-md-dark: #11023b;
+$color-primary: #b6ffed;
+$color-light: #ddf0fe;
+$color-abbr: #c7b57b;
+$color-link: #b3fbe5;
+$color-nav: #10449E;
+$color-lightest: #f5f5fd;
+$color-button-hover: #11b0a6;
+$color-info: #b0d6ec;
+$color-success: #aae7bd;
+$color-danger: #8a0f11;
+$color-callout: #f6ecd6;
+$color-border: rgba(239,245,246,255);
+$color-btn-shdw: rgba(8,11,28,255);
+$colors: $color-background, $color-foreground, $color-dark, $color-light, $color-md-light, $color-md-dark, $color-primary,
+        $color-info, $color-success, $color-danger, $color-callout, $color-lightest, $color-border;
+
+
+
+:root {
+    --color-background: #{$color-background};
+    --color-foreground: #{$color-foreground};
+    --color-dark: #{$color-dark};
+    --color-md-light: #{$color-md-light};
+    --color-md-dark: #{$color-md-dark};
+    --color-primary: #{$color-primary};
+    --color-light: #{$color-light};
+    --color-abbr: #{$color-abbr};
+    --color-link: #{$color-link};
+    --color-nav: #{$color-nav};
+    --color-lightest: #{$color-lightest};
+    --color-button-hover: #{$color-button-hover};
+    --color-info: #{$color-info};
+    --color-success: #{$color-success};
+    --color-danger: #{$color-danger};
+    --color-callout: #{$color-callout};
+}
+
 * {
     margin: 0px;
     padding: 0px;
@@ -11,43 +57,25 @@
     }
 }
 
-:root {
-    --color-background: #dadfd9;
-    --color-foreground: #091d2c;
-    --color-dark: #080b17;
-    --color-light: #ddf0fe;
-    --color-abbr: #c7b57b;
-    --color-link: #b3fbe5;
-    --color-nav: #10449E;
-    --color-lightest: #f5f5fd;
-    --color-button-hover: #11b0a6;
-    --color-success: #aae7bd;
-    --color-danger: #8a0f11;
-    --color-callout: #f6ecd6;
-}
-
 a {
-    color: var(--color-link);
+    color: $color-link;
     text-decoration: none;
 }
 
 abbr {
-    color: var(--color-abbr);
+    color: $color-abbr;
     text-decoration: none;
 }
   
-html, body {
-    min-height: 100%;
-}
 
 body {
-    background-color:var(--color-background);
-    color: var(--color-dark);
+    background-color: $color-background;
+    color: $color-dark;
     line-height: 1.75rem;
 
     &.dark {
-        background-color: var(--color-dark);
-        color:rgb(218,223,217);
+        background-color: $color-dark;
+        color: $color-background;
     }
 
     & > .navbar {
@@ -60,18 +88,18 @@ body {
 button {
     padding: 1em 1.5em;
     background: none;
-    border: 4px solid rgba(239,245,246,255);
+    border: 4px solid $color-border;
     color: rgba(239,245,246,255);
     border-radius: 4px;
     font-weight: bolder;
     font-size: 1rem;
-    box-shadow: inset 0 0 0 0 rgba(8,11,28,255);
+    box-shadow: inset 0 0 0 0 $color-btn-shdw;
     transition: ease-out 0.3s;
     outline: none;
     z-index: 1;
 
     &:hover {
-        box-shadow: inset 300px 0 0 0 var(--color-button-hover);
+        box-shadow: inset 300px 0 0 0 $color-button-hover;
         cursor: pointer;
         color: black;
     }
@@ -79,7 +107,7 @@ button {
 
 div[class="container main"] {
     width: 80%;
-    margin: 10vh auto 0;
+    margin: 10vh auto 10vh;
 }
 
 form {
@@ -102,27 +130,31 @@ form {
     }
 }
 
+html, body {
+    min-height: 100%;
+}
+
 input[type="checkbox"] {
     appearance: none;
     height: 1.75rem;
     width: 1.75rem;
     padding: 1rem;
-    border-radius: 16px;
+    border-radius: $border-circle;
     margin: 0 auto;
-    background-color: var(--color-light);
+    background-color: $color-light;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
 
     &::after {
-        content: '✔';
+        content: $checkmark;
         font-size: 1.5rem;
         display: none;
     }
 
     &:checked {
-        background-color: var(--color-success);
+        background-color: $color-success;
 
         &:after {
             display: inline-block;
@@ -130,10 +162,10 @@ input[type="checkbox"] {
     }
 }
 
-.navbar {
-    background-color: var(--color-nav);
-    color: var(--color-lightest);
-    box-shadow: 0px 0px 10px var(--color-abbr);
+.navbar, .page-footer {
+    background-color: $color-nav;
+    color: $color-lightest;
+    box-shadow: 0px 0px 10px $color-abbr;
     min-height: 5%;
     padding: 1rem;
     width: 100%;
@@ -155,15 +187,19 @@ input[type="checkbox"] {
 
         a {
             display: inline-block;
-            color: var(--color-logo);
+            color: $color-light;
             justify-content: space-around;
             padding: 0 1rem;
         }
     }
 }
 
+.page-footer {
+    justify-content: space-evenly;
+}
+
 pre, form{
-    background-color:var(--color-foreground);
+    background-color: $color-foreground;
     padding: 0.5rem 1rem;
     margin: 1rem;
     border-radius: 4px;
