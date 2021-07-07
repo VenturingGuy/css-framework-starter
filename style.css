@@ -55,7 +55,7 @@ body abbr {
 body button {
   padding: 1em 1.5em;
   background: none;
-  border: 4px solid #eff5f6;
+  border: 4px solid #ded9df;
   color: #eff5f6;
   border-radius: 4px;
   font-weight: bolder;
@@ -89,7 +89,10 @@ body form input, body form textarea {
   border: none;
   outline: none;
   padding-left: 1rem;
-  background-color: #ddf0fe;
+  background-color: #ded9df;
+  color: black;
+  font-weight: bolder;
+  font-size: 1.25em;
 }
 body input[type=checkbox] {
   display: flex;
